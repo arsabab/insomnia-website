@@ -1,0 +1,72 @@
+/* INSOMNIA BANGLADESH website styles.
+   Colours: change the variables at the top (:root) to restyle the whole site.
+   --accent is the red used for buttons and highlights. */
+:root{--bg:#F1E9D6;--bg2:#E7DCC2;--ink:#1C0E0E;--muted:#5E4A48;--line:#CDBF9F;--accent:#8E1119;--accent-ink:#FFF;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#130C0C;--bg2:#1E1212;--ink:#F1E9D6;--muted:#B9A99F;--line:#3A2323;--accent:#E0454D;--accent-ink:#130C0C;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#130C0C;--bg2:#1E1212;--ink:#F1E9D6;--muted:#B9A99F;--line:#3A2323;--accent:#E0454D;--accent-ink:#130C0C;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 Barlow,system-ui,sans-serif}
+a{color:inherit}
+.w{max-width:1100px;margin:0 auto;padding:0 20px}
+.disp{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;line-height:1;margin:0;text-transform:uppercase}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .w{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:58px;flex-wrap:wrap}
+.chip{background:none;padding:6px 0;display:flex;align-items:center}
+.chip img{height:28px;width:auto;display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip img{filter:brightness(1.4)}}
+:root[data-theme="dark"] .chip img{filter:brightness(1.4)}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted);font-weight:600}
+nav a:hover{color:var(--ink)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.cover{display:block;width:100%;height:auto;max-height:78vh;object-fit:cover;object-position:center 30%}
+.intro{padding:44px 0 60px}
+.tag{font-size:clamp(2.2rem,8vw,5rem);margin:0 0 10px}
+.bn{font:600 1.3rem "Noto Sans Bengali",sans-serif;color:var(--accent);margin:0 0 14px}
+.meta{color:var(--muted);font-size:1.15rem;max-width:46ch;margin:0}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;padding:12px 22px;border:2px solid var(--accent);border-radius:2px;font-weight:600;text-decoration:none;background:none;color:var(--ink);font-family:inherit;font-size:1rem;cursor:pointer}
+.btn.p{background:var(--accent);color:var(--accent-ink)}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.9rem,5vw,3rem);margin-bottom:24px}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.about p{max-width:60ch;margin:0 0 14px}
+.plate{background:#F1E9D6;padding:22px;display:flex;align-items:center;justify-content:center}
+.plate img{width:100%;max-width:420px;height:auto}
+.members{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.members img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;filter:grayscale(1) contrast(1.05)}
+.members h3{margin:10px 0 0;font-size:1.2rem}
+.members p,.soon{margin:0;color:var(--muted)}
+.soon{border:1px dashed var(--line);padding:22px;max-width:60ch}
+form{display:grid;gap:14px;max-width:560px}
+label{font-weight:600;display:grid;gap:6px}
+input,textarea{font:inherit;padding:11px;background:var(--bg2);color:var(--ink);border:1px solid var(--line);border-radius:2px}
+textarea{min-height:110px}
+.mcard{cursor:pointer;border:1px solid transparent;padding:8px;transition:border-color .2s}
+.mcard:hover,.mcard[aria-expanded=true]{border-color:var(--accent)}
+.mcard[aria-expanded=true] img{filter:none}
+.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.links[hidden]{display:none}
+.links a{color:var(--accent);font-weight:600}
+.links span{color:var(--muted);font-size:.95rem}
+.gal{columns:3 250px;column-gap:14px}
+.gal button{display:block;width:100%;padding:0;border:0;margin:0 0 14px;background:none;cursor:zoom-in;break-inside:avoid}
+.gal img{width:100%;height:auto;display:block}
+dialog#lb{border:0;padding:0;background:transparent;max-width:96vw;max-height:96vh;overflow:visible}
+dialog#lb::backdrop{background:rgba(0,0,0,.88)}
+dialog#lb img{max-width:94vw;max-height:84vh;display:block;margin:0 auto}
+#lbx{display:block;margin:12px auto 0;background:var(--bg);color:var(--ink)}
+.vid{position:relative;aspect-ratio:16/9;margin-top:40px;background:#000}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.shop{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.item img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--bg2)}
+.item h3{margin:12px 0 2px;font-size:1.15rem}
+.price{margin:0 0 12px;font:400 1.5rem "Archivo Black",Impact,sans-serif;color:var(--accent)}
+.size{margin:-8px 0 12px;color:var(--muted);font-size:.95rem}
+.item .btn{width:100%;text-align:center}
+.soc{display:flex;gap:18px;flex-wrap:wrap;list-style:none;padding:0;margin:0 0 12px}
+footer{padding:36px 0 56px;border-top:1px solid var(--line);color:var(--muted)}
+.note{font-size:.95rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
